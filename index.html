@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My College Project</title>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, #667eea, #764ba2, #6a11cb, #2575fc);
+    background-size: 400% 400%;
+    animation: gradientShift 12s ease infinite;
+    color: #333;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .blob {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.35;
+    z-index: 0;
+    animation: float 8s ease-in-out infinite;
+  }
+  .blob1 { width: 250px; height: 250px; background: #ffffff; top: 10%; left: -80px; animation-delay: 0s; }
+  .blob2 { width: 180px; height: 180px; background: #ffdde1; bottom: 15%; right: -60px; animation-delay: 2s; }
+  .blob3 { width: 130px; height: 130px; background: #a8edea; top: 50%; left: 50%; animation-delay: 4s; }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-30px) scale(1.1); }
+  }
+  nav {
+    position: relative; z-index: 10;
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(6px);
+    padding: 16px; text-align: center;
+  }
+  nav a {
+    color: white; margin: 0 14px; text-decoration: none;
+    font-weight: 600; font-size: 0.95rem; opacity: 0.85;
+    position: relative; transition: opacity 0.2s ease;
+  }
+  nav a::after {
+    content: ''; position: absolute; left: 0; bottom: -4px;
+    width: 0%; height: 2px; background: white;
+    transition: width 0.3s ease;
+  }
+  nav a:hover::after { width: 100%; }
+  nav a.active::after { width: 100%; }
+  nav a:hover { opacity: 1; }
+  header {
+    position: relative; z-index: 5;
+    text-align: center; padding: 80px 20px 40px; color: white;
+  }
+  header h1 { font-size: 2.6rem; margin-bottom: 10px; text-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+  header p { font-size: 1.05rem; opacity: 0.9; letter-spacing: 0.5px; }
+  .container {
+    position: relative; z-index: 5;
+    max-width: 900px; margin: 0 auto 60px; padding: 0 20px;
+  }
+  .card {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px; padding: 30px; margin-bottom: 24px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 16px 35px rgba(0,0,0,0.25); }
+  .card h2 {
+    color: #764ba2; margin-bottom: 14px;
+    border-left: 5px solid #667eea; padding-left: 14px; font-size: 1.4rem;
+  }
+  .card p { line-height: 1.6; }
+  .btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    color: white; padding: 12px 26px; border-radius: 30px;
+    text-decoration: none; font-weight: 600; margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(102,126,234,0.4);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 22px rgba(102,126,234,0.6); }
+  footer {
+    position: relative; z-index: 5;
+    text-align: center; color: white; padding: 20px; opacity: 0.8; font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
+
+<nav data-aos="fade-down">
+  <a href="index.html" class="active">Home</a>
+  <a href="about.html">About</a>
+  <a href="team.html">Team</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<header data-aos="zoom-in" data-aos-duration="1000">
+  <h1>🚀 My College Project</h1>
+  <p>Subject Name | Department | 2026</p>
+</header>
+
+<div class="container">
+  <div class="card" data-aos="fade-up" data-aos-delay="0">
+    <h2>👋 Welcome</h2>
+    <p>This is the official website for our college project. Explore the project details, team, and technologies used across the pages.</p>
+    <br>
+    <a href="about.html" class="btn">Learn More →</a>
+  </div>
+
+  <div class="card" data-aos="fade-up" data-aos-delay="150">
+    <h2>✨ Highlights</h2>
+    <p>Modern design, smooth animations, mobile-friendly layout — all hosted for free on GitHub Pages.</p>
+  </div>
+</div>
+
+<footer data-aos="fade-up">Made with ❤️ by Alphaverse233</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 900, easing: 'ease-out-cubic', once: true });
+</script>
+
+</body>
+  </html>
