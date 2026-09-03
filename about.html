@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - My College Project</title>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, #667eea, #764ba2, #6a11cb, #2575fc);
+    background-size: 400% 400%;
+    animation: gradientShift 12s ease infinite;
+    color: #333;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .blob {
+    position: fixed; border-radius: 50%; filter: blur(50px);
+    opacity: 0.35; z-index: 0; animation: float 8s ease-in-out infinite;
+  }
+  .blob1 { width: 220px; height: 220px; background: #ffe29f; top: 15%; right: -70px; animation-delay: 0s; }
+  .blob2 { width: 170px; height: 170px; background: #a8edea; bottom: 10%; left: -60px; animation-delay: 2.5s; }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-30px) scale(1.1); }
+  }
+  nav {
+    position: relative; z-index: 10;
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(6px);
+    padding: 16px; text-align: center;
+  }
+  nav a {
+    color: white; margin: 0 14px; text-decoration: none;
+    font-weight: 600; font-size: 0.95rem; opacity: 0.85;
+    position: relative; transition: opacity 0.2s ease;
+  }
+  nav a::after {
+    content: ''; position: absolute; left: 0; bottom: -4px;
+    width: 0%; height: 2px; background: white; transition: width 0.3s ease;
+  }
+  nav a:hover::after { width: 100%; }
+  nav a.active::after { width: 100%; }
+  nav a:hover { opacity: 1; }
+  h1.page-title {
+    position: relative; z-index: 5;
+    text-align: center; color: white;
+    padding: 50px 20px 25px;
+    font-size: 2.2rem;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .container {
+    position: relative; z-index: 5;
+    max-width: 900px; margin: 0 auto 60px; padding: 0 20px;
+  }
+  .card {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px; padding: 30px; margin-bottom: 24px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 16px 35px rgba(0,0,0,0.25); }
+  .card h2 {
+    color: #764ba2; margin-bottom: 14px;
+    border-left: 5px solid #667eea; padding-left: 14px; font-size: 1.4rem;
+  }
+  .card p { line-height: 1.7; }
+  .tags span {
+    display: inline-block;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    color: white; padding: 8px 18px; border-radius: 20px;
+    margin: 6px 6px 0 0; font-size: 0.88rem; font-weight: 600;
+    box-shadow: 0 4px 12px rgba(102,126,234,0.35);
+    transition: transform 0.2s ease;
+  }
+  .tags span:hover { transform: translateY(-3px) scale(1.05); }
+  footer {
+    position: relative; z-index: 5;
+    text-align: center; color: white; padding: 20px; opacity: 0.8; font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+
+<nav data-aos="fade-down">
+  <a href="index.html">Home</a>
+  <a href="about.html" class="active">About</a>
+  <a href="team.html">Team</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<h1 class="page-title" data-aos="zoom-in">📌 About This Project</h1>
+
+<div class="container">
+  <div class="card" data-aos="fade-up" data-aos-delay="0">
+    <h2>Abstract</h2>
+    <p>Write 2-3 lines about your project here. Explain what problem it solves, what approach you used, and why it matters.</p>
+  </div>
+
+  <div class="card" data-aos="fade-up" data-aos-delay="150">
+    <h2>⚙️ Technologies Used</h2>
+    <div class="tags">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>Python</span>
+    </div>
+  </div>
+
+  <div class="card" data-aos="fade-up" data-aos-delay="300">
+    <h2>🎯 Objectives</h2>
+    <p>List your project's main goals here — what you aimed to achieve and how you approached it.</p>
+  </div>
+</div>
+
+<footer data-aos="fade-up">Made with ❤️ by Alphaverse233</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 900, easing: 'ease-out-cubic', once: true });
+</script>
+
+</body>
+    </html>
